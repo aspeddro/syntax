@@ -13,3 +13,12 @@ let fetch2 = {
     async (. url) => browserFetch(. url)
     async (. url) => browserFetch2(. url)
 }
+
+// don't parse async es6 arrow
+let () = {
+    ()->async
+    async()
+    async.async
+
+    result->async->mapAsync(a => doStuff(a))
+}
